@@ -1,0 +1,45 @@
+extends ../layouts/default
+
+block section
+  section.bg-volunteer
+    nav.navbar.navbar-light.text-uppercase.small-header.pb-md-5
+      a.navbar-brand.logo-white.d-none.d-md-block(href='https://govolunteer.com/' + language + '/')
+        img(src='/images/logo-govolunteer.png', height='auto', width='114', alt='Govolunteer Logo')
+      a.navbar-brand.d-block.d-md-none(href='https://govolunteer.com/' + language + '/')
+        img(src='/images/logo-govolunteer-sm.png', height='auto', width='42', alt='Govolunteer Logo')
+      .dropdown.show.ml-auto.mr-4
+        a#dropdownMenuLink.dropdown-toggle.text-white(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')= language === 'de' ? 'DE' : 'EN'
+        .dropdown-menu(aria-labelledby='dropdownMenuLink')
+          a.dropdown-item(href='/de') de
+          a.dropdown-item(href='/en') en
+      span(style='font-size:30px;cursor:pointer', onclick='openNav()')
+        svg(xmlns='http://www.w3.org/2000/svg', width='24', height='24', fill='#ffffff', viewbox='0 0 24 24')
+          path(d='M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z')
+    h1.mt-5.title-big.font-weight-bold.text-center.text-white= data.category ? data.category.title[language] : t('category.default')
+    h4.text-center.text-white.pb-5.mb-5= language === 'de' ? 'News & Stories aus der Volunteer Community' : 'News & stories from the volunteer community'
+
+block content
+  .bg-green.pt-2
+    .container
+      .row
+        .col-md-12.my-3
+          .row
+            if data.posts.results.length
+              each post in data.posts.results
+                .col-md-4.mb-5.d-flex.align-items-stretch
+                  .card.border-0.bg-lila
+                    .card-body.pb-0
+                      h5.card-title
+                        a.font-weight-bold.text-dark(href='/' + language + '/post/' + post.key)= post.title[language]
+                      p.card-text!= post.content.brief[language]
+                    a(href='/' + language + '/post/' + post.key)
+                      img.card-img-top(src=post._.image.fill(400, 350), alt=post.title[language])
+          nav
+            if data.posts.totalPages > 1
+              ul.list-inline.text-center.mb-3
+                if data.posts.previous
+                  li.list-inline-item: a.font-weight-bold.mb-4(href='?page=' + data.posts.previous, aria-label='Previous')= t('navigation.previous')
+                if data.posts.next
+                  li.list-inline-item: a.font-weight-bold.mb-4(href='?page=' + data.posts.next, aria-label='Next')= t('navigation.next')
+                li.list-inline-item.color-primary.font-weight-bold.ml-3= data.page + "/" + data.posts.totalPages
+      // /.row

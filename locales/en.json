@@ -1,0 +1,23 @@
+{
+  "navbar": {
+    "search": "Search",
+    "first_project": "Create a project",
+    "about_us": "About us",
+    "imprint": "Imprint",
+    "privacy": "Privacy"
+  },
+  "home": {
+    "title": "Welcome"
+  },
+  "navigation": {
+    "next": "Next Page",
+    "previous": "Previous Page"
+  },
+  "post": {
+    "related_articles": "Related Articles",
+    "recent_posts": "Recent Posts"
+  },
+  "category": {
+    "default": "GoVolunteer Blog"
+  }
+}

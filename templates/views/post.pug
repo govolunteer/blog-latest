@@ -1,0 +1,34 @@
+extends ../layouts/default
+
+block head
+  meta(name='description', content=data.post.description[language])
+
+block content
+  .container
+    .row.justify-content-md-center
+      .col-lg-10
+        a.font-weight-bold.small-90.text-left(href='/') Zurück zum Blog
+        .starter-template
+          h1.h2.font-weight-bold.text-left= data.post.title[language]
+          p.font-italic.text-left= data.post.intro[language]
+          img.mx-auto.d-block.my-4.img-fluid.w-75.rounded(src=data.post._.image.fit(1920, 1080), alt=data.post.title[language])
+        != data.post.content.full[language]
+  .bg-green
+    .container
+      .row.mt-4
+        .col-md-12
+          .my-5
+            h3.mb-3= t('post.related_articles')
+            .row.mb-4
+              if data.categoryPosts.length
+                each post in data.categoryPosts
+                  .col-md.mb-5
+                    .card.border-0.bg-lila
+                      a(href='/' + language + '/post/' + post.key)
+                        img.card-img-top(src=post._.image.fit(400, 270), alt=post.name)
+                      .card-body
+                        h5.card-title
+                          a.font-weight-bold.text-dark(href='/' + language + '/post/' + post.key)= post.title[language]
+                        p.card-text!= post.content.brief[language]
+            .text-center.mb-5
+              a.font-weight-bold.small-90.text-uppercase(href='/') Zum Blog

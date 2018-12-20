@@ -1,0 +1,218 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #4a4a4a;
+}
+
+.article {
+  font-size: 1.1rem;
+}
+
+.starter-template {
+  padding: 1rem 0rem;
+  text-align: center;
+}
+
+a {
+  color: #7b26c9 !important;
+  text-decoration: none;
+}
+
+a.text-dark:hover,
+a.text-secondary:hover {
+  color: #7b26c9 !important;
+  text-decoration: none;
+}
+
+.title-big {
+  font-size: 3rem;
+}
+
+.color-primary {
+  color: #7b26c9 !important;
+}
+
+.bg-lila { 
+  background-color: #f1e4ff
+}
+
+.bg-green { 
+  background-color: #e5fef9
+}
+
+.bg-volunteer {
+background-color: #ffb04a;
+background-repeat: no-repeat;
+background-image: url(https://res.cloudinary.com/www-govolunteer-com/image/upload/v1528203321/engagement.png);
+background-position: 40% 20%;
+background-size: cover;
+min-height: 450px !important;
+}
+
+.logo-white {
+  filter: saturate(0) brightness(150%)
+}
+
+.text-light {
+  color: #999 !important
+}
+
+.small-header a {
+  font-size: 1rem;
+}
+
+.btn-primary {
+  color: #fff !important;
+  background-color: #7b26c9 !important;
+  border-color: #7b26c9;
+}
+
+.btn-primary:hover {
+  color: #fff !important;
+  border-color: #7b26c9;
+}
+
+.btn-outline-primary {
+  color: #7b26c9 !important;
+  border-color: #7b26c9;
+  background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background-color: #7b26c9 !important;
+  border-color: #7b26c9;
+}
+
+.bg-primary {
+  background-color: #7b26c9 !important;
+}
+
+.bg-purple {
+  background-color: #f1e4ff !important;
+}
+
+.page-link {
+  color: #7b26c9;
+  border-color: #7b26c9;
+}
+
+.page-link:hover {
+  color: #fff !important;
+  background-color: #7b26c9;
+  border-color: #7b26c9;
+}
+
+.form-control:focus,
+.custom-select:focus {
+  border-color: #7b26c9;
+  box-shadow: none; }
+
+.bg-grey {
+  background-color: #4a4a4a;
+}
+
+.rounded-50 {
+  border-radius: 50px !important;
+}
+
+.size-50 {
+  height: 50px !important;
+  width: 50px !important;
+}
+
+.size-80 {
+  height: 80px !important;
+  width: 80px !important;
+}
+
+.w-320 { width: 320px; height: auto; }
+@media (min-width: 992px) {
+  .w-lg-320 { width: 320px; height: auto; }
+}
+
+@media (max-width: 991px) {
+  .img-md-fluid  { max-width: 100%; height: auto; }
+}
+
+.small-90 {
+  font-size: 90%;
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: #7b26c9;
+}
+
+::selection {
+  color: #fff;
+  background-color: #7b26c9;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(74,74,74,1)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.w-275 {
+    width: 275px;
+}
+
+.dropdown-menu {
+    min-width: 0rem;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    right: 0;
+    background-color: #f1e4ff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 0;
+}
+
+.sidenav a {
+    padding: 15px 8px 15px 32px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #4a4a4a !important;
+    display: block;
+    border-bottom: 1px solid #4a4a4a;
+    transition: 0.3s;
+}
+
+a.hover-purple:hover {
+    background-color: #d1a6ff;
+    color: #4a4a4a !important;
+}
+
+.sidenav .closebtn {
+    font-size: 32px;
+}
+
+#main {
+    transition: margin-right .5s;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+

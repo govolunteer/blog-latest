@@ -1,0 +1,164 @@
+include ../mixins/flash-messages
+include ../mixins/language-flags
+
+doctype html
+html(lang=language)
+
+  //- HTML HEADER
+  head
+    // Google Tag Manager
+    script.
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-NKCD2RB');
+    // End Google Tag Manager
+
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+    title= title || 'Govolunteer'
+    link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700', rel='stylesheet')
+    // Bootstrap core CSS
+    link(href='/css/bootstrap.min.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='/css/custom.css', rel='stylesheet')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.10/css/all.css', integrity='sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg', crossorigin='anonymous')
+
+    //- This file provides the default styling for the KeystoneJS Content Editor
+    if user && user.canAccessKeystone
+      link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
+
+    //- Include template-specific stylesheets by extending the css block
+    block css
+
+    //- Add any other template-specific HEAD tags by extending the head block
+    block head
+
+  //- HTML BODY
+  body
+    // Google Tag Manager (noscript)
+    noscript
+      iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-NKCD2RB', height='0', width='0', style='display:none;visibility:hidden')
+    // End Google Tag Manager (noscript)
+
+    #mySidenav.sidenav
+      a.closebtn.font-weight-bold(href='javascript:void(0)', onclick='closeNav()') ×
+      a.hover-purple(href='https://govolunteer.com/' + language + '/search')= t('navbar.search')
+      a.hover-purple(href='https://govolunteer.com/' + language + '/organizers/first-project')= t('navbar.first_project')
+      a.hover-purple(href='https://blog.govolunteer.com') Blog
+      a.hover-purple(href='https://deutschlandwirdbunter.de/') Shop
+      a.hover-purple(href='https://govolunteer.com/' + language + '/about')= t('navbar.about_us')
+
+    #main
+      block section
+        nav.navbar.navbar-light.text-uppercase.small-header
+          a.navbar-brand.d-none.d-md-block(href='https://govolunteer.com/' + language + '/')
+            img(src='/images/logo-govolunteer.png', height='auto', width='114', alt='Govolunteer Logo')
+          a.navbar-brand.d-block.d-md-none(href='https://govolunteer.com/' + language + '/')
+            img(src='/images/logo-govolunteer-sm.png', height='auto', width='42', alt='Govolunteer Logo')
+          .dropdown.show.ml-auto.mr-4
+            a#dropdownMenuLink.dropdown-toggle.text-dark(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')= language === 'de' ? 'DE' : 'EN'
+            .dropdown-menu(aria-labelledby='dropdownMenuLink')
+              a.dropdown-item(href='/de') de
+              a.dropdown-item(href='/en') en
+          span(style='font-size:30px;cursor:pointer', onclick='openNav()')
+            svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='#4a4a4a' viewBox='0 0 24 24')
+              path(d='M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z')
+
+      main(role='main')
+        //- BODY
+        #body
+          //- The content block should contain the body of your template's content
+          block content
+
+
+    #overlay
+
+    // Footer
+    section.bg-grey.text-white.pt-5.pb-4
+      // Footer Content
+      .d-flex.flex-column.flex-lg-row.flex-wrap.px-5.justify-content-center.justify-content-md-between.text-center
+        .text-lg-left.mb-4.small-90
+          address
+            strong GoVolunteer e. V.
+            br
+            br
+            |      Gemeinnütziger Verein
+            br
+            |      c/o Migration Hub Network
+            br
+            |      Am Krögel 2, 10179 Berlin
+          address
+            | IBAN: DE69 4306 0967 1185 2321 00
+            br
+            |      Kreditinstitut: GLS-Bank
+        .pr-lg-5.mx-5.mb-4
+          .d-block.pr-lg-5
+            img.img-fluid.mb-3(src='/images/logo-govolunteer.png', height='auto', width='192', alt='GoVolunteer Logo')
+          .pr-lg-5.mb-2
+            .d-inline.p-2.p-sm-3
+              a.text-white(href='https://www.facebook.com/govolunteer')
+                i.fab.fa-2x.fa-facebook-f
+            .d-inline.p-2.p-sm-3
+              a.text-white(href='http://twitter.com/govolunteer_com')
+                i.fab.fa-2x.fa-twitter
+            .d-inline.p-2.p-sm-3
+              a.text-white(href='https://www.youtube.com/channel/UCzU82_UuIOO6dEb8gyNs4iw')
+                i.fab.fa-2x.fa-youtube
+            .d-inline.p-2.p-sm-3
+              a.text-white(href='https://www.instagram.com/govolunteer_com/')
+                i.fab.fa-2x.fa-instagram
+            .d-inline.p-2.p-sm-3
+              a.text-white(href='mailto:info@govolunteer.com')
+                i.fas.fa-2x.fa-envelope
+        .text-lg-right
+          .d-inline.d-lg-block.pb-1.px-2
+            a.text-white(href='https://govolunteer.com/' + language + '/about/vision')= t('navbar.about_us')
+          .d-inline.d-lg-block.pb-1.px-2
+            a.text-white(href='https://govolunteer.com/' + language + '/about/jobs') Jobs
+          .d-inline.d-lg-block.pb-1.px-2
+            a.text-white(href='https://www.hautfarben-buntstifte.com/') Shop
+          .d-inline.d-lg-block.pb-1.px-2
+            a.text-white(href='https://my.sendinblue.com/users/subscribe/js_id/38auf/id/1') Newsletter
+          .d-inline.d-lg-block.pb-1.px-2
+            a.text-white(href='https://govolunteer.com/' + language + '/imprint')= t('navbar.imprint')
+          .d-inline.d-lg-block.pb-1.px-2
+            a.text-white(href='https://govolunteer.com/' + language + '/privacy')= t('navbar.privacy')
+      // End Footer Content
+    // End Footer
+    //
+      Bootstrap core JavaScript
+      ==================================================
+    // Placed at the end of the document so the pages load faster
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+    script.
+      window.jQuery || document.write('<script src="/js/jquery-slim.min.js"><\\/script>')
+    script(src='/js/bootstrap.min.js')
+    script.
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginRight = "250px";
+        document.getElementById("overlay").style.display = "block";
+      }
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginRight = "0";
+        document.getElementById("overlay").style.display = "none";
+      }
+
+    //- Include template-specific javascript files by extending the js block
+    block js

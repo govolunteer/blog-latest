@@ -1,0 +1,23 @@
+{
+  "navbar": {
+    "search": "Suchen",
+    "first_project": "Ertelle ein Projekt",
+    "about_us": "Über uns",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz"
+  },
+  "home": {
+    "title": "Wilkommen"
+  },
+  "navigation": {
+    "next": "Nächste Seite",
+    "previous": "Vorherige Seite"
+  },
+  "post": {
+    "related_articles": "Ähnliche Artikel",
+    "recent_posts": "Neue Artikel"
+  },
+  "category": {
+    "default": "#MachMit"
+  }
+}
