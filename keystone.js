@@ -15,6 +15,7 @@ const keystone = require('keystone');
 // and documentation.
 
 const MONGO_URI = process.env.MONGO_URI;
+const USE_SSL = process.env.USE_SSL;
 const SSL_KEY_PATH = process.env.SSL_KEY_PATH;
 const SSL_CERT_PATH = process.env.SSL_CERT_PATH;
 const SSL_CA_PATH = process.env.SSL_CA_PATH;
@@ -45,7 +46,7 @@ keystone.init({
   'wysiwyg images': true,
 
   // SSL settings
-  'ssl': 'force',
+  'ssl': USE_SSL ? true : false,
   'ssl key': SSL_KEY_PATH,
   'ssl cert': SSL_CERT_PATH,
   'ssl ca': SSL_CA_PATH,
